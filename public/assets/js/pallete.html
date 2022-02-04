@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-2, .section-3, .section-4{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 50px;
+        }
+
+        .box{
+            height: 300px;
+            width: 300px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <section class="section-1">
+        <div class="box">
+        </div>
+    </section>
+    <section class="section-2">
+        <div class="box" style="margin-left: 200px;" ></div>
+        <div class="box"></div>
+        <div class="box" style="margin-right: 200px;"></div>
+    </section>
+    <section class="section-3">
+        <div class="box" style="margin-left: 200px;" ></div>
+        <div class="box"></div>
+        <div class="box" style="margin-right: 200px;"></div>
+    </section>
+    <section class="section-4">
+        <div class="box" style="margin-left: 200px;" ></div>
+        <div class="box"></div>
+        <div class="box" style="margin-right: 200px;"></div>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        let colors = ['#e6d1d1', '#eea29a', '#f2e394', '#b7d7e8', 'red', 'aqua', 'green', 'black', 'turquoise', 'yellow'];
+
+        for(let i=0; i< colors.length; i++){
+            if(i == 0){
+                $(`.box${i}`).css("background-color", colors[0]);
+            }
+        $(`.box${i}`).css("background-color", colors[i]);
+        $(`.box${i}`).on("click", function(){
+            $(`.box0`).css("background-color", colors[i]);
+        });
+    }
+    });
+</script>
+
+<script>
+
+    // const colors = ['#e6d1d1', '#eea29a', '#f2e394', '#b7d7e8', 'red', 'aqua', 'green', 'black', 'turquoise', 'yellow'];
+    // const box = document.getElementsByClassName('box');
+
+    // for(let i=0; i< box.length; i++){
+    //     box.item(i).style.backgroundColor = colors[i];
+    //     box[i].addEventListener("click", function(){
+    //         box.item(0).style.backgroundColor = colors[i]
+    //     })
+    // }
+    // $(document).ready(function(){
+    //     $(".box").on('click', function(){
+    //         $(".box.item(0)").css('background-color', color[i])
+    //     })
+        
+    // })
+    
+</script>
+</html>
